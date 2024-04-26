@@ -6,21 +6,21 @@ import type { PlatformTheme } from '../types'
 
 export const Theme: PlatformTheme = {
   id: 'precious-plastic',
-  siteName: 'Precious Plastic',
+  siteName: 'Food Better',
   logo,
   badge,
   avatar: '',
-  howtoHeading: `Learn & share how to recycle, build and work with plastic`,
+  howtoHeading: `placeholder`,
   styles,
   academyResource: 'https://onearmy.github.io/academy/',
   externalLinks: [
-    {
-      url: 'https://bazar.preciousplastic.com/',
-      label: 'bazar',
-    },
-    {
-      url: 'https://preciousplastic.com/',
-      label: 'Global Site',
-    },
+      {
+          url: 'https://bazar.food-better.com/',
+          label: 'bazar',
+      },
+      {
+          url: 'https://food-better.com/',
+          label: 'Global Site',
+      },
   ],
-}
+};

@@ -19,42 +19,24 @@ export type { ButtonVariants } from '../common/button'
 // use enum to specify list of possible colors for typing
 export const colors = {
   ...baseTheme.colors,
-  primary: 'red',
-  accent: { base: '#fee77b', hover: '#ffde45' },
+  primary: 'purple',
+  accent: { base: '#d27bfe', hover: '#d445ff' },
 }
 
 // cc - assume standard image widths are 4:3, however not clearly defined
 
 export const styles: ThemeWithName = {
-  name: 'Precious Plastic',
+  name: 'Food Better',
   logo: logo,
-  profileGuidelinesURL:
-    'https://drive.google.com/file/d/1fXTtBbzgCO0EL6G9__aixwqc-Euqgqnd/view',
-  communityProgramURL:
-    'https://community.preciousplastic.com/academy/guides/community-program',
+  profileGuidelinesURL: 'placeholder',
+  communityProgramURL: 'placeholder',
   ...baseTheme,
   badges: {
     member: {
-      lowDetail: memberBadgeLowDetail,
-      normal: memberBadgeHighDetail,
+        lowDetail: memberBadgeLowDetail,
+        normal: memberBadgeHighDetail,
     },
-    workspace: {
-      lowDetail: WorkspaceBadgeLowDetail,
-      normal: WorkspaceBadge,
-    },
-    'community-builder': {
-      lowDetail: LocalComBadgeLowDetail,
-      normal: LocalComBadge,
-    },
-    'collection-point': {
-      lowDetail: CollectionBadgeLowDetail,
-      normal: CollectionBadge,
-    },
-    'machine-builder': {
-      lowDetail: MachineBadgeLowDetail,
-      normal: MachineBadge,
-    },
-  },
+},
   buttons: getButtons(colors),
   colors,
 }
