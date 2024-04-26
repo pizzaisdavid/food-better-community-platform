@@ -1,4 +1,4 @@
-/*************************************************************************************** 
+/***************************************************************************************
 Switch config dependent on use case
 
 For our use case the production config is stored in environment variables passed from
@@ -26,6 +26,30 @@ import type { IFirebaseConfig, ISentryConfig, siteVariants } from './types'
  * @returns string
  */
 const _c = (property: ConfigurationOption, fallbackValue?: string): string => {
+  if (property === 'REACT_APP_FIREBASE_API_KEY') {
+    return 'AIzaSyCqBdTcvCi9Z441V8cUi1m4pUJeIGRDzco'
+  }
+  if (property === 'REACT_APP_FIREBASE_AUTH_DOMAIN') {
+    return 'food-better-production.firebaseapp.com'
+  }
+  if (property === 'REACT_APP_FIREBASE_DATABASE_URL') {
+    return 'https://food-better-production.firebaseio.com'
+  }
+  if (property === 'REACT_APP_FIREBASE_MESSAGING_SENDER_ID') {
+    return '394742897336'
+  }
+  if (property === 'REACT_APP_FIREBASE_PROJECT_ID') {
+    return 'food-better-production'
+  }
+  if (property === 'REACT_APP_FIREBASE_STORAGE_BUCKET') {
+    return 'food-better-production.appspot.com'
+  }
+
+
+  if (property === 'REACT_APP_SUPPORTED_MODULES') {
+    return 'howto,research,user,question'
+  }
+
   const configurationSource = ['development', 'test'].includes(
     process.env.NODE_ENV,
   )
@@ -44,39 +68,7 @@ export const getConfigurationOption = _c
 const devSiteRole: UserRole = localStorage.getItem('devSiteRole') as UserRole
 
 const getSiteVariant = (): siteVariants => {
-  const devSiteVariant: siteVariants = localStorage.getItem(
-    'devSiteVariant',
-  ) as any
-
-  if (devSiteVariant === 'preview') {
-    return 'preview'
-  }
-  if (devSiteVariant === 'emulated_site') {
-    return 'emulated_site'
-  }
-  if (devSiteVariant === 'dev_site') {
-    return 'dev_site'
-  }
-  if (location.host === 'localhost:4000') {
-    return 'emulated_site'
-  }
-  if (
-    location.host === 'localhost:3456' ||
-    _c('REACT_APP_SITE_VARIANT') === 'test-ci'
-  ) {
-    return 'test-ci'
-  }
-  if (_c('REACT_APP_SITE_VARIANT') === 'preview') {
-    return 'preview'
-  }
-  switch (_c('REACT_APP_BRANCH')) {
-    case 'production':
-      return 'production'
-    case 'master':
-      return 'staging'
-    default:
-      return 'dev_site'
-  }
+  return 'production' as siteVariants
 }
 
 const siteVariant = getSiteVariant()
