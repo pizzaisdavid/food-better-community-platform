@@ -47,7 +47,7 @@ const _c = (property: ConfigurationOption, fallbackValue?: string): string => {
 
 
   if (property === 'REACT_APP_SUPPORTED_MODULES') {
-    return 'howto,research,user,question'
+    return 'academy,howto,research,user,question'
   }
 
   const configurationSource = ['development', 'test'].includes(
