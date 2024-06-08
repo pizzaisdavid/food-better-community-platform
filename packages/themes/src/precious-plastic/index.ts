@@ -12,7 +12,7 @@ export const Theme: PlatformTheme = {
   avatar: '',
   howtoHeading: `placeholder`,
   styles,
-  academyResource: 'https://pizzaisdavid.github.io/food-better-academy/',
+  academyResource: 'https://pizzaisdavid.github.io/academy/',
   externalLinks: [
       {
           url: 'https://bazar.food-better.com/',
